@@ -17,7 +17,7 @@
                 var btn = document.getElementById("btn-back");
                 btn.style.display = 'inline-block';
                 btn.onclick = function(e) {
-                    history.go(history.length > 2 ? -2 : -1);
+                    history.go(-1);
                     e.preventDefault();
                 };
             }
