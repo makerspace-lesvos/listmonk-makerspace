@@ -1,6 +1,7 @@
 # listmonk-makerspace
 
 Custom listmonk image for Makerspace Lesvos with branded system email templates.
+Based on the upstream listmonk Docker image and sources: https://github.com/knadh/listmonk
 
 ## What's included
 
