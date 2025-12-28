@@ -1,0 +1,33 @@
+{{ define "subscriber-optin" }}
+{{ template "header" . }}
+<h2>Confirm your subscription to Makerspace Lesvos</h2>
+<p>
+    {{ if .Subscriber.FirstName }}
+        Hi {{ .Subscriber.FirstName }},
+    {{ else }}
+        Hi there,
+    {{ end }}
+</p>
+<p>
+    Thanks for your interest in the Makerspace Lesvos newsletter. Please confirm
+    your email address to receive updates, events, and community news.
+</p>
+<ul>
+    {{ range $i, $l := .Lists }}
+        {{ if eq .Type "public" }}
+            <li>{{ .Name }}</li>
+        {{ else }}
+            <li>Private list</li>
+        {{ end }}
+    {{ end }}
+</ul>
+<p>If you did not request this, you can safely ignore this email.</p>
+<p>
+    <a href="{{ .OptinURL }}" class="button">Confirm subscription</a>
+</p>
+<p>
+    <a href="{{ .UnsubURL }}?manage=true">Manage preferences</a>
+</p>
+
+{{ template "footer" }}
+{{ end }}
